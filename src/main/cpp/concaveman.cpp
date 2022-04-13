@@ -1,7 +1,7 @@
-#if 0
-g++ -std=c++11 -shared concaveman.cpp -o libconcaveman.so
-exit 0
-#endif
+// #if 0
+// g++ -std=c++11 -shared concaveman.cpp -o libconcaveman.so
+// exit 0
+// #endif
 
 //
 // Author: Stanislaw Adaszewski, 2019
@@ -10,6 +10,7 @@ exit 0
 #include "concaveman.h"
 
 extern "C" {
+__declspec(dllexport)
     void pyconcaveman2d(double *points_c, size_t num_points,
         int *hull_points_c, size_t num_hull_points,
         double concavity, double lengthThreshold,
